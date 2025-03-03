@@ -1,0 +1,20 @@
+name: Basic GitHub Actions Demo
+
+on:
+  push:
+    branches:
+      - main  # Runs the workflow on every push to the main branch
+  pull_request:
+    branches:
+      - main  # Runs on pull requests targeting main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest  # Specifies the OS to run the job on
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4  # Checks out the repository code
+
+      - name: Print a Message
+        run: echo "Hello, GitHub Actions!"
